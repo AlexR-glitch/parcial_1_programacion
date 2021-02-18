@@ -10,13 +10,29 @@
     <script>
         //1- Haciendo uso de un método, una los siguientes textos y muestrelos en consola (2 puntos)
         const saludo = 'Es bueno verte de regreso, bienvenido '
-        const nombreUsuario = 'Jhon Doe'
+        const nombreUsuario = 'Jhon Doe';
+
+        console.log(`${saludo} ${nombreUsuario}`);
+
         //2- Haciendo uso de un método, corregir la siguiente afirmación y mostrar la afirmación correcta en consola (2 puntos)
         let lenguajesBackend = 'Algunos lenguajes del backend son PHP, C++ y Bootstrap'
+
+        console.log(lenguajesBackend.substring(1,43));
+
         //3- Haciendo uso de distintos métodos, corregir el siguiente array de tal forma que se muestren en consola todos los meses del año de forma ordenada (2 puntos)
         let meses = ['Febrero', 'Marzo', 'Mayo', 'Jueves', 'Viernes', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Miércoles']
 
         console.log(meses)
+        //eliminacion de elementos que no son meses
+        meses.splice(3,2);
+        meses.splice(8,1);
+        console.log(meses);
+        //insertado de meses
+        meses.unshift(`Enero`);
+        meses.splice(3,0,`Abril`);
+        meses.splice(5,0,`Junio`);
+        meses.push(`Diciembre`)
+        console.log(meses);
 
         /*4-Haciendo uso de la información del siguiente objeto, hacer un programa que valide la entrada a un club, así como los beneficios que el cliente puede recibir según el tipo de pase que posea. El programa debe hacer cumplir las siguientes condiciones
             a) Que el cliente sea mayor de edad, de lo contrario este no podrá entrar aunque posea un pase válido
@@ -31,10 +47,28 @@
         */
 
         const persona = {
-            edad: 17,
-            pase: true,
-            paseTipo: 'Estandar'
+            edad: 18,
+            pase: false,
+            paseTipo: 'Premium'
         }
+
+        if(persona.edad >17){
+            console.log()
+            if(persona.pase){
+                console.log("puede entrar al Club")
+            }else{
+                console.log("No puede ingresar al Club")
+            }
+        }else{
+            console.log("No puede entrar al Club")
+        }
+
+        if(persona.paseTipo =='Estandar'){
+            console.log("Tiene acceso a la barra del bar")}
+            else{
+                console.log("Tiene acceso a la barra del bar y a una entrada gratis")
+            }
+        
 
         //5- Subir este archivo a un repositorio de github que contenga al menos los siguientes dos commits: "Primer commit", "Parcial finalizado" y compartirlo en la U-Virtual (2 puntos)
     </script>
